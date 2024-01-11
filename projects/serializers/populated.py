@@ -1,9 +1,9 @@
-from .common import GameSerializer
+from .common import ProjectSerializer
 
 from skills.serializers.common import SkillSerializer
 
 
-class PopulatedGameSerializer(GameSerializer):
+class PopulatedProjectSerializer(ProjectSerializer):
   # used to populate serializer with related name foregin key
   
   skill = SkillSerializer(many=True)

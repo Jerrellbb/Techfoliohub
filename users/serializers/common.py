@@ -11,7 +11,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
   password_confirmation = serializers.CharField(write_only=True)
   class Meta:
     model = User
-    extra_fields = 'password_confirmation'
+    extra_fields = ['password_confirmation']
     fields = '__all__'
   
   def validate(self, data):

@@ -13,6 +13,10 @@ class Project(models.Model):
     related_name='owned_projects',
     null=True
   )
-  
+  skills = models.ManyToManyField(
+    to='skills.Skill',
+    related_name='project'
+  )
+
   def __str__(self):
     return f'{self.title}'
