@@ -4,4 +4,4 @@ from ..models import Skill
 class SkillSerializer(ModelSerializer):
     class Meta:
         model = Skill
-        fields = '__all__'
+        fields = ['name']

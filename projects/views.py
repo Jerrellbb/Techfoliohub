@@ -8,7 +8,7 @@ from lib.permissions import IsOwnerOrReadOnly
 
 class ProjectListCreateView(OwnerListCreateView):
   queryset = Project.objects.all()
-  serializer_class = ProjectSerializer
+  serializer_class = PopulatedProjectSerializer
   permission_classes = [IsAuthenticatedOrReadOnly]
 
 

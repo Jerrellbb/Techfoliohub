@@ -13,7 +13,11 @@ export default function AllProjects(){
         <li key={project.id}>
           <h2>{project.title}</h2>
           <p>{project.description}</p>
-          {/* Add more project details as needed */}
+          <p>Skills:
+              {project.skills.map(skill => (
+                <span key={skill.id}>{skill.name} </span>
+              ))}
+            </p>
         </li>
       ))}
     </ul>
