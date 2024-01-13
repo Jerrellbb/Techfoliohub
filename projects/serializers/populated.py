@@ -17,7 +17,7 @@ class PopulatedProjectSerializer(ProjectSerializer):
 
         # Create associated skills for the project
         for skill_data in skills_data:
-            # Assuming Skill model has a 'name' field
+            
             skill_name = skill_data.get('name')
             if skill_name:
                 skill, _ = Skill.objects.get_or_create(name=skill_name)

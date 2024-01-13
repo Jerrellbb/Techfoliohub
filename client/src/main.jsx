@@ -8,8 +8,10 @@ import './index.css'
 //page components
 import Home from './components/Home.jsx'
 import AllProjects from './components/AllProjects.jsx'
-import { getAllProjects } from "./utils/loaders.js"
-
+import SingleProject from "./components/SingleProject.jsx"
+import UserProfile from "./components/UserProfile.jsx"
+//loaders
+import { getAllProjects, getSingleProject, getProfile } from "./utils/loaders.js"
 
 
 const router = createBrowserRouter([
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
         path: "/projects",
         element: <AllProjects/>,
         loader: getAllProjects
+      },
+      {
+        path: "/projects/:id",
+        element: <SingleProject/>,
+        loader: ({ params }) => getSingleProject(params.id)
+      },
+      {
+        path: "/auth/:id",
+        element: <UserProfile/>,
+        loader: ({ params }) => getProfile(params.id)
       }
       
     ]

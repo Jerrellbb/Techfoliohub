@@ -4,9 +4,9 @@ export default function AllProjects(){
 
   const projects = useLoaderData()
   
-  // const {title, description} = projects
+  
   return (
-    <section className="homescreen">
+    <section className="project">
     <h1>All Projects</h1>
     <ul>
       {projects.map(project => (
