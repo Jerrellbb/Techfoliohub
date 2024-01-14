@@ -10,6 +10,7 @@ User = get_user_model()
 class RegisterView(CreateAPIView):
   queryset = User.objects.all()
   serializer_class = RegistrationSerializer
+  
 
 class UserView(RetrieveAPIView):
   queryset = User.objects.all()

@@ -11,11 +11,12 @@ import AllProjects from './components/AllProjects.jsx'
 import SingleProject from "./components/SingleProject.jsx"
 import UserProfile from "./components/UserProfile.jsx"
 import Login from "./components/Login.jsx"
+import Register from "./components/Register.jsx"
 //loaders
 import { getAllProjects, getSingleProject, getProfile } from "../utils/loaders.js"
 
 //actions
-import { loginUser } from "../utils/actions/auth.js"
+import { loginUser, registerUser } from "../utils/actions/auth.js"
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         path:"/auth/login",
         element: <Login/>,
         action: async ({ request }) => loginUser(request)
+      },
+      {
+        path:"/auth/register",
+        element: <Register/>,
+        action: async ({ request }) => registerUser(request)
       }
       
     ]
