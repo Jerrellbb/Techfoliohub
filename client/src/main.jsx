@@ -10,8 +10,12 @@ import Home from './components/Home.jsx'
 import AllProjects from './components/AllProjects.jsx'
 import SingleProject from "./components/SingleProject.jsx"
 import UserProfile from "./components/UserProfile.jsx"
+import Login from "./components/Login.jsx"
 //loaders
-import { getAllProjects, getSingleProject, getProfile } from "./utils/loaders.js"
+import { getAllProjects, getSingleProject, getProfile } from "../utils/loaders.js"
+
+//actions
+import { loginUser } from "../utils/actions/auth.js"
 
 
 const router = createBrowserRouter([
@@ -22,7 +26,7 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Home />
       },
       {
@@ -33,12 +37,17 @@ const router = createBrowserRouter([
       {
         path: "/projects/:id",
         element: <SingleProject/>,
-        loader: ({ params }) => getSingleProject(params.id)
+        loader: async ({ params }) => getSingleProject(params.id)
       },
       {
         path: "/auth/:id",
         element: <UserProfile/>,
-        loader: ({ params }) => getProfile(params.id)
+        loader: async ({ params }) => getProfile(params.id)
+      },
+      {
+        path:"/auth/login",
+        element: <Login/>,
+        action: async ({ request }) => loginUser(request)
       }
       
     ]
