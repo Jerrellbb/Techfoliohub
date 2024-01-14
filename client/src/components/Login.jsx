@@ -23,8 +23,8 @@ export default function Login() {
       <>
         <h1 className="text-center bold display-3 mb-4">Login</h1>
         <Form className='form' method="POST">
-          <input type="text" name="username" placeholder='Username' />
-          <input type="password" name="password" placeholder="Password" />
+          <input type="text" name="username" placeholder='Username' autoComplete='username'/>
+          <input type="password" name="password" placeholder="Password" autoComplete='current-password' />
           <button className='btn btn-pink' type="submit">Login</button>
           {res && <p className='danger'>{res.data.message}</p>}
         </Form>

@@ -16,16 +16,16 @@ export default function Register(){
       <h1 className="text-center bold display-6 mb-4">Register</h1>
       
         <div className="input-group">
-        <input type="text" name="username" placeholder='Username' />
+        <input type="text" name="username" placeholder='Username' autoComplete='username' />
         </div>
         <div className="input-group">
-        <input type="email" name="email" placeholder='Email' />
+        <input type="email" name="email" placeholder='Email' autoComplete='email'/>
         </div>
         <div className="input-group">
-        <input type="password" name="password" placeholder='Password' />
+        <input type="password" name="password" placeholder='Password' autoComplete='new-password' />
         </div>
         <div className="input-group">
-        <input type="password" name="password_confirmation" placeholder='Confirm password' />
+        <input type="password" name="password_confirmation" placeholder='Confirm password' autoComplete='new-password' />
         </div>
         <button className='btn btn-outline-primary btn-md m-4'  type="submit">Register</button>
         {res && <p className='danger'>{res.data.message}</p>}
