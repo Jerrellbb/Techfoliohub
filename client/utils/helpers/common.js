@@ -34,7 +34,7 @@ export function activeUser(){
   const now = Date.now() / 1000
   const exp = payload.exp
   if (exp > now) {
-    console.log(payload)
+    // console.log(payload)
     return payload
   }
  
@@ -49,7 +49,7 @@ export function getUserId() {
     const userId = activeUserResult.user_id
 
     // Return the user_id
-    console.log(userId)
+    
     return userId
   }
 

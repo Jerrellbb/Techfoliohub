@@ -1,20 +1,14 @@
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import ImageUploadField from './ImageUploadField'
-import { Form, useActionData, useNavigate } from 'react-router-dom'
-import { activeUser } from '../../utils/helpers/common'
+import {   useNavigate } from 'react-router-dom'
+import {  getUserId, getToken } from '../../utils/helpers/common'
+import axios from 'axios'
 export default function CreateProject(){
-  const res = useActionData()
+  
   const navigate = useNavigate()
+  const activeUserId = getUserId()
 
-
-  useEffect(() => {
-    
-    if (res?.status === 201) {
-      console.log('CREATED SUCCESSFULLY')
-      navigate(`/projects/${res.data.id}`)
-      console.log(res.data)
-    }
-  }, [res, navigate])
+  
 
   const [formData, setFormData] = useState({
     title: "",
@@ -23,22 +17,42 @@ export default function CreateProject(){
     end_date: "",
     image: "",
     skills: [],
-    owner: activeUser()
+    owner: activeUserId
+    
   })
-  
+  console.log(formData)
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
   function handleSkillsChange(e) {
     
-    const skillsArray = e.target.value.split(',').map(skill => skill.trim())
+    const skillsArray = e.target.value.split(',').map(skill =>({ "name": skill.trim() }))
     setFormData({ ...formData, skills: skillsArray })
+    console.log(skillsArray)
   }
 
+
+  async function createProject(e){
+  e.preventDefault()
+    
+    try {
+      const res = await axios.post('/api/projects/', formData, {
+        validateStatus : () => true,
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        }
+      })
+      navigate(`/projects/${res.data.id}`)
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
+  
   return (
     <>
       <h1 className="text-center bold display-3 mb-4">Create Project</h1>
-      <Form className='form' method="POST">
+      <form className='form' method="POST" onSubmit={createProject}>
         <label hidden htmlFor="title">Title</label>
         <input type="text" name="title" placeholder='Title' onChange={handleChange} value={formData.title}/>
         <label hidden htmlFor="description">Description</label>
@@ -49,12 +63,11 @@ export default function CreateProject(){
         <input type="date" name="end_date" placeholder='End date' onChange={handleChange} value={formData.end_date}/>
         <label hidden htmlFor="image">Image</label>
         <label hidden htmlFor="skills">Skills</label>
-        <input type="text" name="skills" placeholder='skills used e.g CSS' onChange={handleSkillsChange} value={formData.skills.join(', ')}/>
+        <input type="text" name="skills" placeholder='Skills used (e.g., CSS)' onChange={handleSkillsChange} value={formData.skills.map(skill => skill.name).join(', ')}/>
         <ImageUploadField  value={formData.image} formData={formData} setFormData={setFormData} />
         
-        {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
         <button className="btn btn-pink" type="submit">Create</button>
-      </Form>
+      </form>
     </>
   )
 }
