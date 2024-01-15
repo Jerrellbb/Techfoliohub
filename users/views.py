@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, RetrieveAPIView
+from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
 from django.contrib.auth import get_user_model
 from .serializers.common import RegistrationSerializer, UserSerializer
 from .serializers.populated import PopulatedUserSerializer
@@ -12,7 +12,7 @@ class RegisterView(CreateAPIView):
   serializer_class = RegistrationSerializer
   
 
-class UserView(RetrieveAPIView):
+class UserView(ListAPIView):
   queryset = User.objects.all()
   serializer_class = PopulatedUserSerializer
 

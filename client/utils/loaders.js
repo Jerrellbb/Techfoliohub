@@ -17,3 +17,8 @@ export async function getProfile(id){
   return res.data
 }
 
+export async function getAllProfiles(){
+  const res = await axios.get('/api/auth/users')
+  console.log(res)
+  return res.data
+}

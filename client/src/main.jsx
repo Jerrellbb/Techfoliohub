@@ -13,13 +13,14 @@ import UserProfile from "./components/UserProfile.jsx"
 import Login from "./components/Login.jsx"
 import Register from "./components/Register.jsx"
 //loaders
-import { getAllProjects, getSingleProject, getProfile } from "../utils/loaders.js"
+import { getAllProjects, getSingleProject, getProfile, getAllProfiles } from "../utils/loaders.js"
 
 //actions
 import { loginUser, registerUser } from "../utils/actions/auth.js"
 import {  editProject } from "../utils/actions/project.js"
 import CreateProject from "./components/CreateProject.jsx"
 import EditProject from "./components/EditProject.jsx"
+import AllProfiles from "./components/AllProfiles.jsx"
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
         element: <EditProject/>,
         action: async ({ request }) => editProject(request),
         loader: async ({ params }) => getSingleProject(params)
+      },
+      {
+        path:"/hire",
+        element: <AllProfiles/>,
+        loader: async ({ params }) => getAllProfiles(params)
       }
       
     ]
