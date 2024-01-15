@@ -8,6 +8,7 @@ export async function formToObj(request){
 
 export function setToken(token){
   localStorage.setItem(tokenName, token)
+  
 }
 
 export function getToken(){
@@ -34,6 +35,26 @@ export function activeUser(){
   const exp = payload.exp
   if (exp > now) {
     console.log(payload)
-    return payload.sub
+    return payload
   }
+ 
+
 }
+
+export function getUserId() {
+  const activeUserResult = activeUser()
+
+  if (activeUserResult) {
+    // Extract user_id from the payload
+    const userId = activeUserResult.user_id
+
+    // Return the user_id
+    console.log(userId)
+    return userId
+  }
+
+  // If there is no active user, return null or handle accordingly
+  return null
+}
+
+

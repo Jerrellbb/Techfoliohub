@@ -11,9 +11,9 @@ export default function Login() {
 
   useEffect(() => {
     if (res?.status === 200) {
-      setToken(res.data.token)
+      setToken(res.data.access)
       navigate('/Home')
-      console.log(res.data.message)
+      setTimeout(console.log(res.data.access), 5000)
     }
   }, [res, navigate])
   return (

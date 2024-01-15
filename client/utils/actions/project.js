@@ -8,24 +8,27 @@ export async function createProject(request){
   return await axios.post('/api/projects/', data, {
     validateStatus : () => true,
     headers: {
-      Authorization: `Bearer ${getToken()}`
+      Authorization: `Bearer ${getToken()}`,
+      'Content-Type': 'application/json'
     }
   })
 }
+
 export async function editProject(request, id){
 
   const data = await formToObj(request)
-  return await axios.patch(`/api/projects/${id}`, data, {
+  return await axios.patch(`/api/projects/${id}/`, data, {
     validateStatus : () => true,
     headers: {
       Authorization: `Bearer ${getToken()}`
+
     }
   })
 }
 
 export async function deleteProject(id){
 
-  await axios.delete(`/api/projects/${id}`,{
+  await axios.delete(`/api/projects/${id}/`,{
     validateStatus : () => true,
     headers: {
       Authorization: `Bearer ${getToken()}`
