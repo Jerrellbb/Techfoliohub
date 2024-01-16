@@ -1,4 +1,4 @@
-import { useLoaderData} from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 
 export default function AllProfiles(){
   const users = useLoaderData()
@@ -10,7 +10,7 @@ export default function AllProfiles(){
     <ul>
       {users.map((user) => (
         <li key={user.id}>
-          <image src={user.image}/>
+          <img src={user.image}/>
           <h2>{user.username}</h2>
           <p>{user.first_name}</p>
           <p>{user.last_name}</p>

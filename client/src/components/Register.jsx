@@ -11,7 +11,7 @@ export default function Register(){
     }
   }, [res, navigate])
   return (
-    <div className="register-container">
+    <div className="form-container">
       <Form  className='form' method="POST">
       <h1 className="text-center bold display-6 mb-4">Register</h1>
       

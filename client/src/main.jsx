@@ -12,15 +12,18 @@ import SingleProject from "./components/SingleProject.jsx"
 import UserProfile from "./components/UserProfile.jsx"
 import Login from "./components/Login.jsx"
 import Register from "./components/Register.jsx"
+import CreateProject from "./components/CreateProject.jsx"
+import EditProject from "./components/EditProject.jsx"
+import AllProfiles from "./components/AllProfiles.jsx"
+import EditProfile from "./components/EditProfile.jsx"
 //loaders
 import { getAllProjects, getSingleProject, getProfile, getAllProfiles } from "../utils/loaders.js"
 
 //actions
 import { loginUser, registerUser } from "../utils/actions/auth.js"
 import {  editProject } from "../utils/actions/project.js"
-import CreateProject from "./components/CreateProject.jsx"
-import EditProject from "./components/EditProject.jsx"
-import AllProfiles from "./components/AllProfiles.jsx"
+
+import {editProfile} from "../utils/actions/profile.js"
 
 
 const router = createBrowserRouter([
@@ -68,12 +71,18 @@ const router = createBrowserRouter([
         path: "/projects/:id/edit",
         element: <EditProject/>,
         action: async ({ request }) => editProject(request),
-        loader: async ({ params }) => getSingleProject(params)
+        loader: async ({ params }) => getSingleProject(params.id)
       },
       {
         path:"/hire",
         element: <AllProfiles/>,
         loader: async ({ params }) => getAllProfiles(params)
+      },
+      {
+        path:"/auth/profile/:id/edit",
+        element: <EditProfile/>,
+        action: async ({ request }) => editProfile(request),
+        loader: async ({ params }) => getProfile(params.id)
       }
       
     ]
