@@ -12,6 +12,7 @@ export default function AllProjects(){
       {projects.map(project => (
         <li key={project.id}>
           <h2>{project.title}</h2>
+          <img src={project.image} style={{width:"250px"}}/>
           <p>{project.description}</p>
           <p>Skills:
               {project.skills.map(skill => (

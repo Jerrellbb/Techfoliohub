@@ -1,4 +1,4 @@
-/* :root {
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -7,10 +7,16 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ 
+  min-width: 100dvw;
+  
+}
+
+#root {
+  max-width: 1280px;
+  width: 100dvw;
+  padding: 2rem;
+  height: 100dvh;
 }
 
 a {
@@ -26,7 +32,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100dvw;
   min-height: 100vh;
 }
 
@@ -65,4 +71,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}

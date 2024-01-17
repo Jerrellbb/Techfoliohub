@@ -9,7 +9,7 @@ export default function SingleProject(){
 
   const project = useLoaderData()
   const navigate = useNavigate()
-  const {title, description, id, comments} = project
+  const {title, description, id, comments, image} = project
   
   
   const [formData, setFormData] = useState({
@@ -45,9 +45,9 @@ export default function SingleProject(){
 
   return (
     <><section className="project">
-    <h1>single Projects</h1>
+    <h1>{title}</h1>
 
-    <p>{title} <br/> {description}</p>
+    <p> <br/> <img src={image} style={{maxWidth: "400px"}}/> <br/> {description}</p>
     <p>comments:
               {comments.map(comment => (
                 <li key={comment.id}>

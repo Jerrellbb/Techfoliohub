@@ -10,15 +10,15 @@ export default function EditProject(){
   
   const project = useLoaderData()
   console.log(project)
-  const {end_date, start_date, id, comments} = project
+  const {end_date, start_date, id, comments, description, image, skills, title, project_link} = project
   const [formData, setFormData] = useState({
-    title: "",
-    description: "",
+    title: title,
+    description: description,
     start_date: start_date, 
     end_date: end_date,
-    image: "",
-    project_link: "",
-    skills: [],
+    image: image,
+    project_link: project_link,
+    skills: skills,
     comments: comments
     
     
@@ -56,9 +56,10 @@ export default function EditProject(){
     
   }
   
-  async function deleteProject() {
+  async function deleteProject(e) {
+    e.preventDefault()
     try {
-      const res = await axios.delete(`/auth/profile/${getUserId()}`, {
+      const res = await axios.delete(`/api/projects/${id}/`, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         }

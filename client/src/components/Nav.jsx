@@ -1,9 +1,10 @@
 
-import Container from 'react-bootstrap/Container'
+
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { activeUser,  getUserId, removeToken } from '../../utils/helpers/common'
+import logo from "../assets/images/techfolio.png"
 
 
 
@@ -49,25 +50,28 @@ export default function Navigation() {
 
       <>
         <Navbar>
-          <Container fluid style={{ paddingLeft: 0 }}>
-            <Nav className="me-auto">
+          <div className="nav-bar" >
+            
 
+            <div className="logo">
+              <img src={logo} />
+            </div>
 
+            <div className='navlinks'>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/home'>Home</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id={`/auth/profile/${activeUserId}`}>My Profile</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/projects'>Projects</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/hire'>Hire</button></Nav.Link>
-            </Nav>
-            <Nav className='justify-content-end'>
+            
               {activeUserId ? (
               <Nav.Link onClick={handleSignOut}><button type='button' className='btn btn-primary' id='/signout'>Sign out</button></Nav.Link>
               ):(
                 <Nav.Link onClick={() => navigate('/auth/login')}><button type='button' className='btn btn-primary' id='/login'>Login</button></Nav.Link>
               )}
+            </div>
               
-              
-            </Nav>
-          </Container>
+            
+          </div>
         </Navbar></>
 
 

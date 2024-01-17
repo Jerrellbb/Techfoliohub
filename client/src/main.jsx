@@ -4,7 +4,7 @@ import App from './App.jsx'
 
 //styles
 import './index.css'
-
+import './styles/main.scss'
 //page components
 import Home from './components/Home.jsx'
 import AllProjects from './components/AllProjects.jsx'
@@ -21,7 +21,7 @@ import { getAllProjects, getSingleProject, getProfile, getAllProfiles } from "..
 
 //actions
 import { loginUser, registerUser } from "../utils/actions/auth.js"
-import {   editProject,  addComment } from "../utils/actions/project.js"
+import { addComment, deleteProject } from "../utils/actions/project.js"
 import {editProfile} from "../utils/actions/profile.js"
 
 
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: "/projects/:id/edit",
         element: <EditProject/>,
-        action: async ({ request }) => editProject(request),
+        action: async ({ request }) => deleteProject(request),
         loader: async ({ params }) => getSingleProject(params.id)
       },
       {
