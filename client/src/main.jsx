@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         path: "/projects/:id",
         element: <SingleProject/>,
         loader: async ({ params }) => getSingleProject(params.id),
-        action: async ({ request }) => addComment( request)
+        action: async ({ request }) => addComment(request)
       },
       {
         path: "/auth/profile/:id",

@@ -18,6 +18,7 @@ export default function CreateProject(){
     image: "",
     project_link: "",
     skills: [],
+    comments: []
     
     
   })

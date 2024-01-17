@@ -10,7 +10,7 @@ export default function EditProject(){
   
   const project = useLoaderData()
   console.log(project)
-  const {end_date, start_date, id} = project
+  const {end_date, start_date, id, comments} = project
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -19,6 +19,7 @@ export default function EditProject(){
     image: "",
     project_link: "",
     skills: [],
+    comments: comments
     
     
   })
@@ -63,7 +64,7 @@ export default function EditProject(){
         }
       })
       console.log(res)
-      // Redirect to a page or perform any other actions after deletion
+      
       navigate(`/auth/profile/${getUserId()}`)
     } catch (error) {
       console.log(error)

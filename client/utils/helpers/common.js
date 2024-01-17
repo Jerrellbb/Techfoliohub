@@ -1,4 +1,4 @@
-const tokenName = 'TECH-FOLIO-TOKEN'
+const tokenName = 'TECH-FOLIO'
 
 // This function takes a request object and returns form data as a JS object
 export async function formToObj(request){

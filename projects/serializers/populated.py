@@ -6,7 +6,7 @@ from comments.serializers.common import CommentSerializer
 
 class PopulatedProjectSerializer(ProjectSerializer):
   # used to populate serializer with related name foregin key
-  comments = CommentSerializer(many=True)
+  comments = CommentSerializer(many=True, read_only=True)
   skills = SkillSerializer(many=True)
 
   def create(self, validated_data):

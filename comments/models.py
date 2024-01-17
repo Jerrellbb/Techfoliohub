@@ -8,7 +8,9 @@ class Comment(models.Model):
   project = models.ForeignKey(
     to='projects.Project',
     on_delete=models.CASCADE,
-    related_name='comments'
+    related_name='comments',
+    null=True,
+    blank=True
   )
   owner = models.ForeignKey(
     to='users.User',

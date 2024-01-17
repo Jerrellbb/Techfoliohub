@@ -1,15 +1,16 @@
-import {  useLoaderData, useNavigate, useActionData} from "react-router-dom"
-import { Form } from "react-router-dom"
-import { getUserId } from "../../utils/helpers/common"
+import {  useLoaderData, useNavigate} from "react-router-dom"
+
+import axios from "axios"
 import { useState } from "react"
+import { getToken } from "../../utils/helpers/common"
 
 
 export default function SingleProject(){
-  const res = useActionData()
+
   const project = useLoaderData()
   const navigate = useNavigate()
   const {title, description, id, comments} = project
-  console.log(res)
+  
   
   const [formData, setFormData] = useState({
     text: "",
@@ -23,10 +24,28 @@ export default function SingleProject(){
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  async function createComment(e){
+    e.preventDefault()
+      
+      try {
+        const res = await axios.post(`/api/comments/`, formData, {
+          validateStatus : () => true,
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          }
+        })
+        return res, navigate(``)
+        
+      } catch (error) {
+        console.log(error)
+      }
+      
+    }
+
 
   return (
     <><section className="project">
-    <h1>All Projects</h1>
+    <h1>single Projects</h1>
 
     <p>{title} <br/> {description}</p>
     <p>comments:
@@ -40,15 +59,13 @@ export default function SingleProject(){
             onClick={() => navigate(`/projects/${id}/edit/`)}>
               Edit Project
               </button>
-              <Form method='POST'>
+              <form method='POST' onSubmit={createComment}>
                 <label hidden htmlFor="text">Comment</label>
-                <textarea name="text" placeholder="Let them know what you think" onChange={handleChange} value={formData.text}></textarea>
-            <button type='submit' className='btn btn-primary btn-sm' style={{ marginTop: '5px' }} onClick={() => navigate(`/auth/profile/${id}`)}  >Post comment</button>
-            {res && <p className='danger'>{res.data.message}</p>}
-          </Form>
-              {/* <Form method='POST'>
-            <button type='submit' className='btn btn-primary btn-sm' style={{ marginTop: '5px' }} onClick={() => navigate(`/auth/profile/${getUserId()}`)}>Delete Project</button>
-          </Form> */}
+                <textarea name="text" placeholder="Let them know what you think" onChange={handleChange} value={formData.text} ></textarea>
+            <button type='submit' className='btn btn-primary btn-sm' style={{ marginTop: '5px' }}  >Post comment</button>
+            
+          </form>
+              
   </section>
   
   </>

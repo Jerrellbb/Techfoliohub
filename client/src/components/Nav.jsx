@@ -39,7 +39,7 @@ export default function Navigation() {
 
   const handleSignOut = () => {
     removeToken()
-    navigate('/signout')
+    navigate('/home')
   }
 
   return (
@@ -59,7 +59,13 @@ export default function Navigation() {
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/hire'>Hire</button></Nav.Link>
             </Nav>
             <Nav className='justify-content-end'>
+              {activeUserId ? (
               <Nav.Link onClick={handleSignOut}><button type='button' className='btn btn-primary' id='/signout'>Sign out</button></Nav.Link>
+              ):(
+                <Nav.Link onClick={() => navigate('/auth/login')}><button type='button' className='btn btn-primary' id='/login'>Login</button></Nav.Link>
+              )}
+              
+              
             </Nav>
           </Container>
         </Navbar></>
