@@ -14,5 +14,5 @@ class Comment(models.Model):
     to='users.User',
     on_delete=models.CASCADE,
     related_name='comments',
-        null=True
+    null=True
   )

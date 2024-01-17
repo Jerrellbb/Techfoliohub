@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom"
 export default function AllProfiles(){
   const users = useLoaderData()
   console.log(users)
- 
   return (
     <section className="user">
     <h1>All users</h1>

@@ -21,8 +21,7 @@ import { getAllProjects, getSingleProject, getProfile, getAllProfiles } from "..
 
 //actions
 import { loginUser, registerUser } from "../utils/actions/auth.js"
-import {  editProject } from "../utils/actions/project.js"
-
+import {   editProject,  addComment } from "../utils/actions/project.js"
 import {editProfile} from "../utils/actions/profile.js"
 
 
@@ -45,7 +44,8 @@ const router = createBrowserRouter([
       {
         path: "/projects/:id",
         element: <SingleProject/>,
-        loader: async ({ params }) => getSingleProject(params.id)
+        loader: async ({ params }) => getSingleProject(params.id),
+        action: async ({ request }) => addComment( request)
       },
       {
         path: "/auth/profile/:id",

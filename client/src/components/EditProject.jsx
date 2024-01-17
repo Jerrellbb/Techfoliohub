@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ImageUploadField from './ImageUploadField'
 import {   useNavigate, useLoaderData  } from 'react-router-dom'
-import {  getToken } from '../../utils/helpers/common'
+import {  getToken, getUserId } from '../../utils/helpers/common'
 import axios from 'axios'
 
 export default function EditProject(){
@@ -55,6 +55,22 @@ export default function EditProject(){
     
   }
   
+  async function deleteProject() {
+    try {
+      const res = await axios.delete(`/auth/profile/${getUserId()}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        }
+      })
+      console.log(res)
+      // Redirect to a page or perform any other actions after deletion
+      navigate(`/auth/profile/${getUserId()}`)
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+  
   return (
     <>
       <h1 className="text-center bold display-3 mb-4">Edit Project</h1>
@@ -76,6 +92,9 @@ export default function EditProject(){
         
         <button className="btn btn-pink" type="submit">Edit</button>
       </form>
+      <form method='POST'>
+            <button type='submit' className='btn btn-primary btn-sm' style={{ marginTop: '5px' }} onClick={deleteProject}>Delete Project</button>
+          </form>
     </>
   )
-}
+} 
