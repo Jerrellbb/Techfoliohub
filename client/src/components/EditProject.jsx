@@ -34,6 +34,9 @@ export default function EditProject(){
     console.log(skillsArray)
   }
 
+  const handleImageChange = (newImage) => {
+    setFormData({ ...formData, image: newImage })
+  }
 
   async function editProject(e){
   e.preventDefault()
@@ -75,6 +78,8 @@ export default function EditProject(){
   
   return (
     <>
+    <div className="form-container">
+      
       <h1 className="text-center bold display-3 mb-4">Edit Project</h1>
       <form className='form' method="PATCH" onSubmit={editProject}>
         <label hidden htmlFor="title">Title</label>
@@ -91,12 +96,18 @@ export default function EditProject(){
         <input type="text" name="skills" placeholder='Skills used (e.g., CSS)' onChange={handleSkillsChange} value={formData.skills.map(skill => skill.name).join(', ')}/>
         <label hidden htmlFor="image">Image</label>
         <ImageUploadField  value={formData.image} formData={formData} setFormData={setFormData} />
-        
-        <button className="btn btn-pink" type="submit">Edit</button>
-      </form>
-      <form method='POST'>
-            <button type='submit' className='btn btn-primary btn-sm' style={{ marginTop: '5px' }} onClick={deleteProject}>Delete Project</button>
-          </form>
-    </>
+
+        <div className="button-container">
+        <button type="button" className="btn btn-primary" onClick={() => handleImageChange(null)}>
+          Choose New Image
+        </button>
+        <button className="btn btn-pink" type="submit">Update Project</button>
+        <form method='POST'>
+          <button type='submit' className='btn btn-primary btn-sm' onClick={deleteProject}>Delete Project</button>
+        </form>
+      </div>
+    </form>
+  </div>
+</>
   )
 } 

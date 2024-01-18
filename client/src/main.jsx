@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 
 //styles
-import './index.css'
+// import './index.css'
 import './styles/main.scss'
 //page components
 import Home from './components/Home.jsx'

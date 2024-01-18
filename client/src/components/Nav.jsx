@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { activeUser,  getUserId, removeToken } from '../../utils/helpers/common'
-import logo from "../assets/images/techfolio.png"
+import logo from "../assets/images/logo2.png"
+
 
 
 
@@ -26,17 +27,17 @@ export default function Navigation() {
   console.log('userID -->' , activeUserId)
   const handleClick = (e) => {
 
-    if (e.target.id === '/auth/profile/null' || user === null) {
+    if (e.target.id === '/auth/profile/null') {
       navigate('/auth/register/')
     } else if (activeUser === user) {
 
       navigate(`/auth/profile/${activeUserId}`)
     } else {
       navigate(`${e.target.id}`)
-    }
+    }console.log(e.target.id)
   }
 
-
+  
 
   const handleSignOut = () => {
     removeToken()

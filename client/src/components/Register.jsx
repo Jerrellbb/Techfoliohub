@@ -12,22 +12,22 @@ export default function Register(){
   }, [res, navigate])
   return (
     <div className="form-container">
-      <Form  className='form' method="POST">
-      <h1 className="text-center bold display-6 mb-4">Register</h1>
       
-        <div className="input-group">
+      <h1 className="text-center bold display-3 mb-4">Register</h1>
+      <Form  className='form' method="POST">
+        
         <input type="text" name="username" placeholder='Username' autoComplete='username' />
-        </div>
-        <div className="input-group">
+        
+        
         <input type="email" name="email" placeholder='Email' autoComplete='email'/>
-        </div>
-        <div className="input-group">
+        
+        
         <input type="password" name="password" placeholder='Password' autoComplete='new-password' />
-        </div>
-        <div className="input-group">
+        
+        
         <input type="password" name="password_confirmation" placeholder='Confirm password' autoComplete='new-password' />
-        </div>
-        <button className='btn btn-outline-primary btn-md m-4'  type="submit">Register</button>
+        
+        <button   type="submit">Register</button>
         {res && <p className='danger'>{res.data.message}</p>}
       </Form>
     </div>

@@ -53,6 +53,7 @@ export default function CreateProject(){
   
   return (
     <>
+    <div className="form-container">
       <h1 className="text-center bold display-3 mb-4">Create Project</h1>
       <form className='form' method="POST" onSubmit={createProject}>
         <label hidden htmlFor="title">Title</label>
@@ -72,6 +73,7 @@ export default function CreateProject(){
         
         <button className="btn btn-pink" type="submit">Create</button>
       </form>
+      </div>
     </>
   )
 }
