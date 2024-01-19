@@ -1,5 +1,5 @@
 
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, Link } from "react-router-dom"
 
 
 export default function AllProfiles() {
@@ -11,6 +11,7 @@ export default function AllProfiles() {
       <ul className="grid-container">
         {users.map((user) => (
           <li key={user.id} className="grid-item">
+            <Link>
             <img src={user.image} alt={user.username} />
             <div className="user-info">
               <h2>{user.username}</h2>
@@ -25,6 +26,7 @@ export default function AllProfiles() {
                 GitHub
               </a>
             </div>
+            </Link>
           </li>
         ))}
       </ul>

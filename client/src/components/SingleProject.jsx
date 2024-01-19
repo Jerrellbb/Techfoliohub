@@ -2,16 +2,16 @@ import { useLoaderData, useNavigate } from "react-router-dom"
 
 import axios from "axios"
 import { useState } from "react"
-import { getToken } from "../../utils/helpers/common"
+import { getToken, getUserId } from "../../utils/helpers/common"
 
 
 export default function SingleProject() {
 
   const project = useLoaderData()
   const navigate = useNavigate()
-  const { title, description, id, comments, image, project_link} = project
+  const { title, description, id, comments, image, project_link, owner } = project
 
-
+  console.log(comments)
   const [formData, setFormData] = useState({
     text: "",
     project: id
@@ -19,7 +19,7 @@ export default function SingleProject() {
 
   })
 
-  console.log(formData)
+  
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
@@ -42,11 +42,28 @@ export default function SingleProject() {
 
   }
 
+  async function removeComment(e,comment_id) {
+    e.preventDefault()
+
+    try {
+      const res = await axios.delete(`/api/comments/${comment_id}/`, {
+        validateStatus: () => true,
+        headers: {
+          Authorization: `Bearer ${getToken()}`
+        }
+      })
+      console.log(res)
+      return res, navigate(``)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
   return (
     <>
       <section className="single-project">
-        
+
         <h1>{title}</h1>
 
         <div className="content-container">
@@ -57,19 +74,20 @@ export default function SingleProject() {
               <br />
               {description}
             </p>
-            <br/>
-              
-              <a href={project_link}>View Full Project</a>
-              <br/>
+            <br />
 
-            <button
-              type="button"
-              className="editbtn"
-              style={{ marginTop: '5px' }}
-              onClick={() => navigate(`/projects/${id}/edit/`)}
-            >
-              Edit Project
-            </button>
+            <a href={project_link}>View Full Project</a>
+            <br />
+
+            {getUserId() === owner &&
+              <button
+                type="button"
+                className="editbtn"
+                style={{ marginTop: '5px' }}
+                onClick={() => navigate(`/projects/${id}/edit/`)}
+              >
+                Edit Project
+              </button>}
           </div>
 
           <div className="comment-container">
@@ -77,7 +95,17 @@ export default function SingleProject() {
             <ul className="comment-list">
               {comments.map(comment => (
                 <li key={comment.id} className="comment">
+                  <div className="comment-content">
                   <p>{comment.text}</p>
+                  </div>
+                  {getUserId() === comment.owner && (
+                    <div className="remove-comment-container">
+                    <form method='POST' value={comment.id} onSubmit={removeComment}>
+                    <button onClick={(e) => removeComment(e, comment.id)}>❌</button>
+
+                    </form>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

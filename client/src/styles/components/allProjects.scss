@@ -56,13 +56,18 @@
 }
 
 .container-grid {
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 16px; 
 }
 
 .project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   list-style: none;
   padding: 0;
   margin: 0;
 }
+

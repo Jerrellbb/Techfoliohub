@@ -41,7 +41,7 @@ export default function Navigation() {
 
   const handleSignOut = () => {
     removeToken()
-    navigate('/home')
+    navigate('/')
   }
 
   return (
@@ -59,7 +59,7 @@ export default function Navigation() {
             </div>
 
             <div className='navlinks'>
-              <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/home'>Home</button></Nav.Link>
+              <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/'>Home</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id={`/auth/profile/${activeUserId}`}>My Profile</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/projects'>Projects</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/hire'>Hire</button></Nav.Link>
