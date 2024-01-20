@@ -33,6 +33,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
   owned_projects = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+  
   class Meta:
     model = User # the model that is used to serialize the queryset
     fields = '__all__' # which fields to serialize

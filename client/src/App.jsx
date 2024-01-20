@@ -1,11 +1,10 @@
-
+import Spinner from 'react-bootstrap/Spinner'
 import './App.css'
 import Navigation from './components/Nav'
-import { Outlet, useLocation, useNavigation } from 'react-router-dom'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Outlet, useNavigation } from 'react-router-dom'
+import Footer from './components/Footer'
+
 function App() {
-  const currentPage = useLocation().pathname
   const navigation = useNavigation()
 
   return (
@@ -14,12 +13,18 @@ function App() {
         <main>
         {
           
-          // navigation.state === 'idle' ?
+          navigation.state === 'idle' ?
             <Outlet />
-            // :
-            // <div className='loading'></div>
+            :
+            <div className='loading-container'>
+              <div className='loading'></div>
+            </div>
+              
+                
+            
         }
       </main>
+      <Footer/>
     </>
   )
 }

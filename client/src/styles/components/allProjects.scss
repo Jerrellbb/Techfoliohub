@@ -1,73 +1,77 @@
+.container-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+h1{
+    text-align: center;
+  }
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .project-col {
-  position: relative;
-  overflow: hidden;
+  flex: 0 0 48%; 
+  margin-bottom: 20px; 
+  text-align: center;
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.search-bar{
+  margin-bottom: 10px;
 }
 
 .project-image {
-  width: 100%;
-  height: auto;
+  width: 350px;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 8px;
 }
 
 .project-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 10px;
-  margin: 0;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-col:hover .project-title {
-  opacity: 1;
-}
-
-.project-col {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px; 
-  margin-bottom: 20px; 
-}
-
-.project-image {
-  border-radius: 10px 10px 0 0; 
+  margin: 10px 0;
 }
 
 .owner-info {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 10px;
+  justify-content: center;
 }
 
-.owner-info img {
-  width: 50px;
+.owner-image {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
-.owner-info p {
-  color: #fff;
-  margin: 0;
-}
-
-.container-grid {
-  
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 16px; 
-}
-
-.project-list {
+.owner-info {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  justify-content: center;
 }
 
+.owner-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+}

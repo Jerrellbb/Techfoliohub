@@ -1,6 +1,8 @@
 .main {
   display: flex;
-  
+  h2{
+    text-align: center;
+  }
 }
 
 .homescreen {
@@ -22,7 +24,7 @@
 
 .sign-up {
   position: absolute;
-  top: 20px; /* Adjust the top position as needed */
+  top: 20px; 
   right: 0px;
   padding: 10px 20px;
   background-color: #646cff;
