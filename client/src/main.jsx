@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         loader: async ({ params }) => getSingleProject(params.id)
       },
       {
-        path:"/hire",
+        path:"/developers",
         element: <AllProfiles/>,
         loader: async ({ params }) => getAllProfiles(params)
       },

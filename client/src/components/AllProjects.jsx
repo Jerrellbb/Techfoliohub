@@ -23,7 +23,7 @@ export default function AllProjects() {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search by skills"
+          placeholder="Search by Skill"
           value={search}
           onChange={handleSearchChange}
         />

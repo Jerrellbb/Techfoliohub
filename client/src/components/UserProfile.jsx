@@ -4,10 +4,10 @@ import { useLoaderData, useNavigate } from 'react-router-dom'
 export default function UserProfile() {
   const profile = useLoaderData()
   const navigate = useNavigate()
-  const { username, email, image, id, first_name, last_name, github, linkedin, bio } = profile
+  const { username, email, image, id, first_name, last_name, github, linkedin, bio, owned_projects } = profile
 
   return (
-    
+
     <section className="user-profile">
       <div className="header">
         <img src={image} alt={username} className="image" />
@@ -21,17 +21,21 @@ export default function UserProfile() {
           <strong>Email:</strong> {email}
         </p>
         <p>
-          <strong>Github:</strong> <a href={github}/>
+          <strong>Github:</strong> <a href={github}>{github}</a>
         </p>
         <p>
-          <strong>LinkedIn:</strong> <a href={linkedin}/> 
+          <strong>LinkedIn:</strong> <a href={linkedin}>{linkedin}</a>
         </p>
         {bio && (
           <p>
             <strong>Bio:</strong> {bio}
           </p>
         )}
-      
+        {owned_projects.map((project) => {
+          const { project_link, title, id } = project
+          return <p key={id}><strong>Project Name:</strong> {title} <br /> <strong>Project Link:</strong> <a href={project_link}>View Full Project</a></p>
+        })}
+
       </div>
       <div className="profile-btn">
         <button onClick={() => navigate('/projects/create/')}>Add Project</button>

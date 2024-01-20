@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 # use import ModelSerialiers next time instead of just seriealisers the sam as seriealisers.modelserialiser just shorter
 from ..models import User
+from projects.serializers.common import ProjectSerializer
 
 
 from django.contrib.auth import get_user_model
@@ -32,7 +33,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-  owned_projects = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+  owned_projects = ProjectSerializer(many=True, read_only=True)
   
   class Meta:
     model = User # the model that is used to serialize the queryset

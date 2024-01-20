@@ -12,12 +12,7 @@ import logo from "../assets/images/logo2.png"
 export default function Navigation() {
 
   const navigate = useNavigate()
-  // const location = useLocation()
-
-
-
-
-  // get the details of the active user from id
+  
   
   const user = activeUser()
 
@@ -62,7 +57,7 @@ export default function Navigation() {
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/'>Home</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id={`/auth/profile/${activeUserId}`}>My Profile</button></Nav.Link>
               <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/projects'>Projects</button></Nav.Link>
-              <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/hire'>Hire</button></Nav.Link>
+              <Nav.Link onClick={handleClick}><button type='button' className='btn btn-primary' id='/developers'>Developers</button></Nav.Link>
             
               {activeUserId ? (
               <Nav.Link onClick={handleSignOut}><button type='button' className='btn btn-primary' id='/signout'>Sign out</button></Nav.Link>
