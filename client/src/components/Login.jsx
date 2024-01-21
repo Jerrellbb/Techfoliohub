@@ -18,7 +18,7 @@ export default function Login() {
     if (res?.status === 200) {
       setToken(res.data.access)
       navigate('/')
-      setTimeout(console.log(res.data.access), 5000)
+      
     } else if (res?.status === 401) {
 
       toast.error('Password or Username is incorrect!')
@@ -39,7 +39,7 @@ export default function Login() {
         </Form>
       </div>
 
-      <ToastContainer />
+      <ToastContainer theme= "dark" />
     </>
   )
 }
