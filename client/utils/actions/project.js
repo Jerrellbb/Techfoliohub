@@ -35,7 +35,7 @@ export async function deleteProject(id){
     }
   })
   
-  return redirect(`/auth/${id}`)
+  return redirect(`/auth/${id}/`)
 }
 
 
@@ -53,7 +53,7 @@ export async function addComment(data) {
 }
 
 export async function removeComment(commentId) {
-  return await axios.delete(`/auth/comments/${commentId}`, {
+  return await axios.delete(`/auth/comments/${commentId}/`, {
     validateStatus: () => true,
     headers: {
       Authorization: `Bearer ${getToken()}`

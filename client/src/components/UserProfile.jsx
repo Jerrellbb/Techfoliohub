@@ -37,7 +37,7 @@ export default function UserProfile() {
               <div key={id}>
                 <p><strong>Project Name:</strong> {title}</p>
                 <p><strong>Project Link:</strong> <a href={project_link}>View Full Project</a></p>
-                <Link to={`/projects/${id}`}><p>View project info</p> </Link>
+                <Link to={`/projects/${id}/`}><p>View project info</p> </Link>
               </div>
 
 
@@ -50,7 +50,7 @@ export default function UserProfile() {
           {getUserId() === id && (
             <>
             <button onClick={() => navigate('/projects/create/')}>Add Project</button>
-            <button onClick={() => navigate(`/auth/profile/${id}/edit`)}>Edit Profile</button>
+            <button onClick={() => navigate(`/auth/profile/${id}/edit/`)}>Edit Profile</button>
             </>
           )}
         </div>

@@ -13,7 +13,7 @@ export default function Home() {
         </section>
         <section className="hero" > <img src={hero} /> </section>
         {activeUser() === null && (
-        <Link to="/auth/register"><button className='sign-up'>Sign Up!</button></Link>
+        <Link to="/auth/register/"><button className='sign-up'>Sign Up!</button></Link>
         )}
       </div>
     </>

@@ -11,7 +11,7 @@ export default function AllProfiles() {
       <ul className="grid-container">
         {users.map((user) => (
           <li key={user.id} className="grid-item">
-            <Link to={`/auth/profile/${user.id}`}>
+            <Link to={`/auth/profile/${user.id}/`}>
             <img src={user.image} alt={user.username} />
             <div className="user-info">
               <h2>{user.username}</h2>

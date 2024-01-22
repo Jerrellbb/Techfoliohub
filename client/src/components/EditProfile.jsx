@@ -12,7 +12,7 @@ const {first_name, last_name, bio, linkedin, github, image} = profile
 useEffect(() => {
   console.log(res)
   if (res?.status === 200) {
-    navigate(`/auth/profile/${activeUserId}`)
+    navigate(`/auth/profile/${activeUserId}/`)
   }
 }, [res, navigate, activeUserId])
 

@@ -52,7 +52,7 @@ export default function EditProject(){
         }
       })
       console.log(res)
-      navigate(`/projects/${res.data.id}`)
+      navigate(`/projects/${res.data.id}/`)
     } catch (error) {
       console.log(error)
     }
@@ -69,7 +69,7 @@ export default function EditProject(){
       })
       console.log(res)
       
-      navigate(`/auth/profile/${getUserId()}`)
+      navigate(`/auth/profile/${getUserId()}/`)
     } catch (error) {
       console.log(error)
     }

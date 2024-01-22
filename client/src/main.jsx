@@ -37,49 +37,49 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/projects",
+        path: "/projects/",
         element: <AllProjects/>,
         loader: getAllProjects
       },
       {
-        path: "/projects/:id",
+        path: "/projects/:id/",
         element: <SingleProject/>,
         loader: async ({ params }) => getSingleProject(params.id),
         action: async ({ request }) => addComment(request)
       },
       {
-        path: "/auth/profile/:id",
+        path: "/auth/profile/:id/",
         element: <UserProfile/>,
         loader: async ({ params }) => getProfile(params.id)
       },
       {
-        path:"/auth/login",
+        path:"/auth/login/",
         element: <Login/>,
         action: async ({ request }) => loginUser(request)
       },
       {
-        path:"/auth/register",
+        path:"/auth/register/",
         element: <Register/>,
         action: async ({ request }) => registerUser(request)
       },
       {
-      path:"/projects/create",
+      path:"/projects/create/",
       element: <CreateProject/>,
       
       },
       {
-        path: "/projects/:id/edit",
+        path: "/projects/:id/edit/",
         element: <EditProject/>,
         action: async ({ request }) => deleteProject(request),
         loader: async ({ params }) => getSingleProject(params.id)
       },
       {
-        path:"/developers",
+        path:"/developers/",
         element: <AllProfiles/>,
         loader: async ({ params }) => getAllProfiles(params)
       },
       {
-        path:"/auth/profile/:id/edit",
+        path:"/auth/profile/:id/edit/",
         element: <EditProfile/>,
         action: async ({ request }) => editProfile(request),
         loader: async ({ params }) => getProfile(params.id)

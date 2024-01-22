@@ -7,7 +7,7 @@ export default function Register(){
   
   useEffect(() => {
     if (res?.status === 201) {
-      navigate('/auth/login')
+      navigate('/auth/login/')
     }
   }, [res, navigate])
   return (

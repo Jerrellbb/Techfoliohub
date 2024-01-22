@@ -44,7 +44,7 @@ export default function CreateProject(){
           Authorization: `Bearer ${getToken()}`,
         }
       })
-      navigate(`/projects/${res.data.id}`)
+      navigate(`/projects/${res.data.id}/`)
     } catch (error) {
       console.log(error)
     }
