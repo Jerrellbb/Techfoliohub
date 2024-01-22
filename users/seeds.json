@@ -1,0 +1,156 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$1TQihGogJKrSS5q8VJfH5L$uO5zMiEapvQbhnKvCVUv2a1dDwyJ4Zf1tpoxaqHFBUU=",
+    "last_login": "2024-01-11T18:39:10.655Z",
+    "is_superuser": true,
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-01-11T15:35:27.435Z",
+    "first_name": "Jerrell",
+    "last_name": "Brown",
+    "bio": "Hey there! I'm Jerrell, a budding web developer passionate about crafting digital experiences. Armed with a love for coding and a hunger for learning, I'm diving into the world of web development to bring ideas to life. From HTML to JavaScript, I'm on a journey to master the tools of the trade.",
+    "username": "jerrellbb",
+    "linkedin": "",
+    "github": "",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705841234/projects/kngp0pv1xhjwvobz2ods.avif",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$cxZmABwa78kxB2q0HsjKo5$vaBy3flkk9NTvG78h+lNAPLZK8fG7yreQjB5GtEF+TE=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "jer13@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-11T16:37:49.287Z",
+    "first_name": "jerrell",
+    "last_name": "boyer",
+    "bio": "the creator",
+    "username": "jer13",
+    "linkedin": "https://www.linkedin.com/in/jerrell-b-01037994/",
+    "github": "https://github.com/Jerrellbb",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705674974/projects/bpqfgpkhc1bvprauttht.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$dKxuPYzbkmBGQc9ruAJ19h$AZqp2YsEAFjic0JazzMWzeX5AOwmcnmfzXt5iWv93i8=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "bob1@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-14T12:12:33.887Z",
+    "first_name": "Bob",
+    "last_name": "Bobbington",
+    "bio": "I'm Bob, a passionate web developer on a journey to create seamless and delightful online experiences. With a love for clean code and innovative solutions, I thrive on turning ideas into reality.",
+    "username": "bob123",
+    "linkedin": "https://www.linkedin.com/in/example",
+    "github": "https://github.com/example",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705675881/projects/o62wwgfhxtuuccjvkcoy.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$yPobUGdrfoZoNBfbRDl3fj$d4daoKSu+OzM3m8EBVFw0eWCAFLFLov8W9EelVhoUY4=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "nasiim@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-17T16:20:03.486Z",
+    "first_name": "Nasiim",
+    "last_name": "Nuur",
+    "bio": "Hey there! I'm Nasiim, a budding web developer passionate about crafting digital experiences. Armed with a love for coding and a hunger for learning, I'm diving into the world of web development to bring ideas to life. From HTML to JavaScript, I'm on a journey to master the tools of the trade.",
+    "username": "nasiim",
+    "linkedin": "",
+    "github": "",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705677095/projects/h7whbecnmxtcvdzcjymp.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$f8Jq8JEbjUrDpbStz2JbSb$k+lycmXw6qowVFuhnHYpx2bRJ3A8wG0lpq9pAVOANQ0=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "ben@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-17T16:40:46.072Z",
+    "first_name": "Ben",
+    "last_name": "Brown",
+    "bio": "Greetings! I'm Ben, a seasoned web developer with years of experience shaping the digital landscape. From the early days of HTML tables to the latest in React and Node.js, I've traversed the ever-evolving tech terrain.",
+    "username": "ben",
+    "linkedin": "",
+    "github": "",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705678248/projects/dtjakmguhl3hrybjiidt.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$rxZ6zorZq2PwMyqBMzrtGo$PQkjuZusDyrp1p3mWRbOKFiG+aL7QhpF/jlESkLldPs=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "diane@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-17T16:49:05Z",
+    "first_name": "Diane",
+    "last_name": "Jean",
+    "bio": "Hey, I'm Diane, a web enthusiast on a coding adventure! With a keen eye for design and a passion for clean code, I bring digital ideas to life. My toolkit includes HTML, CSS, and JavaScript, with a dash of React for that interactive flair.",
+    "username": "diane",
+    "linkedin": null,
+    "github": null,
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705528032/projects/qgexkkrwcnghffnjjkkg.webp",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$tjKB8mdWnbY0XAP1Clx6N4$gJYDr6NFQqDtnJEUvOsxnmgmuoyrVX/oygx1OMJhuvM=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "tracy@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-01-17T16:57:17.644Z",
+    "first_name": "Tracy",
+    "last_name": "Beaker",
+    "bio": "Hello, I'm Tracy, a passionate web developer weaving digital dreams in the world of coding. With a flair for creativity and a love for elegant design, I'm on a mission to make the web a more beautiful and user-friendly place.",
+    "username": "tracy",
+    "linkedin": "",
+    "github": "",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705677310/projects/i9i1u4v2lxrhjyugjt1o.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

@@ -1,0 +1,143 @@
+[
+{
+  "model": "projects.project",
+  "pk": 9,
+  "fields": {
+    "title": "Vinous Voyages",
+    "description": "Full stack app",
+    "start_date": "2024-01-01",
+    "end_date": "2024-01-28",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705508750/projects/nqkbxxkg5qgrpbwyo6hp.png",
+    "project_link": "https://vinous-voyages1-ebaad3273a99.herokuapp.com/",
+    "owner": 6,
+    "skills": [
+      7,
+      8,
+      2
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 10,
+  "fields": {
+    "title": "Ninjump",
+    "description": "ninja styled frogger game",
+    "start_date": "2023-12-23",
+    "end_date": "2023-12-30",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705509554/projects/sywlzmr3iv3yi85rqu3f.png",
+    "project_link": "https://jerrellbb.github.io/Ninja-Frogger/",
+    "owner": 2,
+    "skills": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 11,
+  "fields": {
+    "title": "Super Hero Search",
+    "description": "Front end app using third party hero api",
+    "start_date": "2024-01-03",
+    "end_date": "2024-01-17",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705531017/projects/pahsr4toalmb7mix34rb.png",
+    "project_link": "https://superherosearch.netlify.app/",
+    "owner": 7,
+    "skills": [
+      1,
+      8
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 12,
+  "fields": {
+    "title": "Legends of the turf",
+    "description": "Full stack fantasy football app",
+    "start_date": "2024-01-17",
+    "end_date": "2024-02-08",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705510300/projects/nexv2ygfn0aoqgafckax.png",
+    "project_link": "https://legends-of-the-turf-657a9862baae.herokuapp.com/",
+    "owner": 8,
+    "skills": [
+      7,
+      8,
+      2
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 13,
+  "fields": {
+    "title": "wordle",
+    "description": "web based word game",
+    "start_date": "2023-08-10",
+    "end_date": "2023-09-30",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705510726/projects/mzrhkcglsxdu2pbyynya.png",
+    "project_link": "https://www.nytimes.com/games/wordle/index.html",
+    "owner": 9,
+    "skills": [
+      7,
+      8,
+      2
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 14,
+  "fields": {
+    "title": "Lunar pest",
+    "description": "Pest Control Website For Customer Instant Booking and Scheduling Service",
+    "start_date": "2024-01-02",
+    "end_date": "2024-02-01",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705511026/projects/obkmj5y5tjnvwfrfk2sr.png",
+    "project_link": "https://lunarpestcontrol.com/",
+    "owner": 9,
+    "skills": [
+      9
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 16,
+  "fields": {
+    "title": "pictagram",
+    "description": "basically instagrm",
+    "start_date": "2024-01-10",
+    "end_date": "2024-01-27",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705532512/projects/zmx1opebe6ve6gtvebxc.png",
+    "project_link": "",
+    "owner": 2,
+    "skills": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 18,
+  "fields": {
+    "title": "Techfolio",
+    "description": "A place for dev's to showcase there portfolios",
+    "start_date": "2024-01-12",
+    "end_date": "2024-01-22",
+    "image": "https://res.cloudinary.com/du3laub4f/image/upload/v1705840220/projects/xkiub79p2xqmpglxx7cq.png",
+    "project_link": "",
+    "owner": 1,
+    "skills": [
+      1,
+      8,
+      10,
+      11,
+      2
+    ]
+  }
+}
+]
