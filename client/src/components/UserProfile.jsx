@@ -13,7 +13,7 @@ export default function UserProfile() {
           <img src={image} alt={username} className="image" />
           <h1>{username}</h1>
         </div>
-        <div className="details">
+        <div className="details" key={id}>
           <p>
             <strong>Name:</strong> {first_name}, {last_name}
           </p>
@@ -33,7 +33,7 @@ export default function UserProfile() {
           )}
           {owned_projects.map((project) => {
             const { project_link, title, id } = project
-            return <>
+            return (
               <div key={id}>
                 <p><strong>Project Name:</strong> {title}</p>
                 <p><strong>Project Link:</strong> <a href={project_link}>View Full Project</a></p>
@@ -41,7 +41,7 @@ export default function UserProfile() {
               </div>
 
 
-            </>
+          )
           })}
 
         </div>
